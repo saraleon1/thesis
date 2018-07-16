@@ -1,4 +1,4 @@
-view: 201505_hourly_ridership {
+view: hourly_ridership_15 {
   sql_table_name: `fh-bigquery.mta_nyc_si.`201505_hourly_ridership``
     ;;
 

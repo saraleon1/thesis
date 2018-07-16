@@ -1,4 +1,4 @@
-view: 201505_bus_subway_transfers {
+view: bus_subway_transfers_15 {
   sql_table_name: `fh-bigquery.mta_nyc_si.`201505_bus_subway_transfers``
     ;;
 

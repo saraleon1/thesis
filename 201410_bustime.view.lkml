@@ -1,4 +1,4 @@
-view: 201410_bustime {
+view: bustime_14 {
   sql_table_name: `fh-bigquery.mta_nyc_si.`201410_bustime``
     ;;
 

@@ -1,4 +1,4 @@
-view: 201410_bus_max_load {
+view: bus_max_load_14 {
   sql_table_name: `fh-bigquery.mta_nyc_si.`201410_bus_max_load``
     ;;
 
