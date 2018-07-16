@@ -1,5 +1,5 @@
 view: timepoint_14 {
-  sql_table_name: `fh-bigquery.mta_nyc_si.201410_timepoint`
+  sql_table_name: 'fh-bigquery.mta_nyc_si.201410_timepoint'
     ;;
 
   dimension: act_arr {

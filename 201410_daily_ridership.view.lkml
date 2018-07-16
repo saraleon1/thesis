@@ -1,5 +1,5 @@
 view: daily_ridership_14 {
-  sql_table_name: `fh-bigquery.mta_nyc_si.201410_daily_ridership`
+  sql_table_name: 'fh-bigquery.mta_nyc_si.201410_daily_ridership'
     ;;
 
   dimension: dir {

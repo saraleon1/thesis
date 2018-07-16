@@ -1,5 +1,5 @@
 view: bus_max_load_15 {
-  sql_table_name: `fh-bigquery.mta_nyc_si.201505_bus_max_load`
+  sql_table_name: 'fh-bigquery.mta_nyc_si.201505_bus_max_load'
     ;;
 
   dimension: hh {
