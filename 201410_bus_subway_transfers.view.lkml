@@ -1,5 +1,5 @@
 view: bus_subway_transfers_14 {
-  sql_table_name: `fh-bigquery.mta_nyc_si.`201410_bus_subway_transfers``
+  sql_table_name: `fh-bigquery.mta_nyc_si.201410_bus_subway_transfers'
     ;;
 
   dimension: borough {

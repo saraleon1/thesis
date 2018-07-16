@@ -1,5 +1,5 @@
 view: bustime_14 {
-  sql_table_name: `fh-bigquery.mta_nyc_si.`201410_bustime``
+  sql_table_name: `fh-bigquery.mta_nyc_si.201410_bustime'
     ;;
 
   dimension: act_dest_sign_code {
