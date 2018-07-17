@@ -23,6 +23,7 @@ view: park_info {
 
   dimension: park_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}.park_id ;;
   }
 

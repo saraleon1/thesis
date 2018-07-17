@@ -21,6 +21,11 @@ include: "*.view.lkml"         # include all views in this project
 
 explore: maintained_assets {}
 
-explore: park_info {}
+explore: park_info {
+  join: park_scores {
+    relationship: one_to_many
+    sql_on: ${park_info.park_id} = ${park_scores.park_id} ;;
+  }
+}
 
 explore: park_scores {}
