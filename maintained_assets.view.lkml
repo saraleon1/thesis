@@ -3,7 +3,6 @@ view: maintained_assets {
 
   dimension: asset_id {
     type: number
-    primary_key: yes
     sql: ${TABLE}.asset_id ;;
   }
 
@@ -49,6 +48,7 @@ view: maintained_assets {
 
   dimension: object_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}.object_id ;;
   }
 
