@@ -31,5 +31,6 @@ view: revenue_dt {
       type: sum
       sql: ${revenue} ;;
       value_format: "$#,##0.00"
+      drill_fields: [store_id, revenue, rental_rate, title]
     }
   }

@@ -33,6 +33,6 @@ view: city {
 
   measure: count {
     type: count
-    drill_fields: [city_id]
+    drill_fields: [city_id, city, country_id]
   }
 }

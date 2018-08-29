@@ -29,6 +29,6 @@ view: country {
 
   measure: count {
     type: count
-    drill_fields: [country_id]
+    drill_fields: [country_id, country]
   }
 }

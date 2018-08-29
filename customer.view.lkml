@@ -23,7 +23,7 @@ view: customer {
     sql: ${TABLE}.address_id ;;
   }
 
-  dimension_group: creat {
+  dimension_group: create {
     type: time
     timeframes: [
       raw,
@@ -35,7 +35,7 @@ view: customer {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.creat_date ;;
+    sql: ${TABLE}.create_date ;;
   }
 
   dimension: email {
@@ -86,8 +86,12 @@ view: customer {
   set: detail {
     fields: [
       customer_id,
+      active,
+      activebool,
+      address_id,
       last_name,
       first_name,
+      email,
       store.store_id,
       address.address_id,
       payment.count,

@@ -50,6 +50,6 @@ view: address {
 
   measure: count {
     type: count
-    drill_fields: [address_id, customer.count, staff.count, store.count]
+    drill_fields: [address_id, address, city_id, district, phone, postal_code, customer.count, staff.count, store.count]
   }
 }

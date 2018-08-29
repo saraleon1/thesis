@@ -95,7 +95,19 @@ view: film {
       language.language_id,
       film_actor.count,
       film_category.count,
-      inventory.count
+      inventory.count,
+      title,
+      special_features,
+      replacement_cost,
+      rental_rate,
+      rental_duration,
+      release_year,
+      rating,
+      length,
+      language_id,
+      fulltext,
+      description,
+      film_id
     ]
   }
 }

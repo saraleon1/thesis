@@ -53,6 +53,7 @@ view: payment {
   set: detail {
     fields: [
       payment_id,
+      amount,
       staff.staff_id,
       staff.last_name,
       staff.first_name,

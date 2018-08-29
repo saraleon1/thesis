@@ -29,6 +29,6 @@ view: film_actor {
 
   measure: count {
     type: count
-    drill_fields: [actor.last_name, actor.actor_id, actor.first_name, film.film_id]
+    drill_fields: [actor_id, film_id, actor.last_name, actor.actor_id, actor.first_name, film.film_id]
   }
 }

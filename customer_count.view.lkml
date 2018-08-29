@@ -21,5 +21,6 @@ view: customer_count {
 
   measure: count_attempt_dist {
     type: count_distinct
+    drill_fields: [full_name, email, count]
   }
 }

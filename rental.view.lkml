@@ -89,6 +89,7 @@ view: rental {
     type: number
     sql: ${rental.count}*${film.rental_rate} ;;
     value_format: "$0.00"
+    drill_fields: [detail*]
   }
 
 
@@ -104,7 +105,8 @@ view: rental {
       customer.last_name,
       customer.customer_id,
       customer.first_name,
-      payment.count
+      payment.count,
+      film.rental_rate
     ]
   }
 }
