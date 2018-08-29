@@ -48,8 +48,9 @@ view: rental {
   }
 
   measure: first_rental {
-    type: min
-    sql:${TABLE}.rental_date;;
+    type: date
+    sql:min(${TABLE}.rental_date);;
+    drill_fields: [detail*]
   }
 
   dimension_group: return {
