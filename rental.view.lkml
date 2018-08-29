@@ -47,6 +47,11 @@ view: rental {
     sql: ${TABLE}.rental_date ;;
   }
 
+  measure: first_rental {
+    type: min
+    sql:${TABLE}.rental_date;;
+  }
+
   dimension_group: return {
     type: time
     timeframes: [
