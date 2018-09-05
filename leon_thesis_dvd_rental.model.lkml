@@ -277,7 +277,7 @@ explore: rental {
 }
 
 
-explore: revenue_dt {}
+# explore: revenue_dt {}
 
 
 
@@ -328,3 +328,14 @@ explore: store {
     relationship: many_to_one
   }
 }
+
+explore: first_rental {}
+
+explore: rental_log {}
+explore: monthly_activity {}
+
+explore: dt_block {
+  label: "Cohorts"
+}
+
+explore: customer_order_facts {}

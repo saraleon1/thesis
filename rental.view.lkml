@@ -91,12 +91,18 @@ view: rental {
     drill_fields: [detail*]
   }
 
-  measure: revenue {
-    type: number
-    sql: ${rental.count}*${film.rental_rate} ;;
-    value_format: "$0.00"
-    drill_fields: [detail*]
-  }
+#   measure: times_rented {
+#     type: number
+#   #  sql: COUNT(${inventory_id}) ;;
+#     sql:
+#           COUNT(rental.inventory_id)  AS rental_times_rented
+#         FROM leon_thesis_data.rental  AS rental
+#
+#         GROUP BY 1
+#         ORDER BY 1
+#         LIMIT 500 ;;
+#     drill_fields: [detail*]
+#   }
 
 
   # ----- Sets of fields for drilling ------
