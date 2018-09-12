@@ -31,6 +31,18 @@ dimension:  film_rating {
   type: string
 }
 
+# parameter: film_rating_filter {
+#   type: string
+#   suggestions: ["G", "PG", "PG-13", "R", "NC-17"]
+# #   allowed_value: { value: "R" }
+# #   allowed_value: { value: "G" }
+# #   allowed_value: { value: "PG" }
+# #   allowed_value: { value: "PG-13" }
+# #   allowed_value: { value: "NC-17" }
+#
+#
+# }
+
 dimension: film_release_year {
   type: number
 }
@@ -51,4 +63,15 @@ dimension: film_rental_duration {
 dimension: rental_count {
   type: number
 }
+
+parameter: max_rank {
+  type: number
+  default_value: "10"
+}
+
+dimension: rank_limit {
+  type: number
+  sql: {% parameter max_rank %} ;;
+}
+
 }

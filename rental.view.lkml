@@ -77,6 +77,12 @@ view: rental {
   dimension: overdue {
     type: string
     sql: if(${rental.actual_rental_duration} - ${film.rental_duration} > 0, "overdue", "on time");;
+    html:{% if value == "overdue" %}
+                   <p style="color: white; background-color: purple; font-size:150%; text-align:center"><img src="https://ctimgibedfordviewcampuslibrary.files.wordpress.com/2015/10/library-books-return.jpg" height=70 width=70>{{ rendered_value }}</p>
+          {% else %}
+            <p <p style="color: black; background-color: lightgreen; font-size:100%; text-align:center"><img src="https://cdn1.vectorstock.com/i/1000x1000/33/60/hands-palm-applause-success-text-bravo-vector-6003360.jpg" height=70 width=70 style="color: black; background-color: orange; font-size:100%; text-align:center">{{ rendered_value }}</p>
+          {% endif %}
+          ;;
   }
 
   dimension: staff_id {

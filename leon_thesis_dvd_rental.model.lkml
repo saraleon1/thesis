@@ -1,7 +1,7 @@
 connection: "lookerdata_standard_sql"
 
 include: "*.view.lkml"         # include all views in this project
-#include: "*.dashboard.lookml"  # include all dashboards in this project
+include: "test_dash.dashboard.lookml"  # include all dashboards in this project
 
 
 explore: actor {
@@ -331,6 +331,8 @@ explore: store {
 
 explore: first_rental {}
 
+explore: revenue_dt {}
+
 explore: rental_log {}
 explore: monthly_activity {}
 
@@ -339,3 +341,4 @@ explore: dt_block {
 }
 
 explore: customer_order_facts {}
+explore: test_param_preservetype {}

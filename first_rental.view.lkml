@@ -1,6 +1,8 @@
 view: first_rental {
 #   derived_table: {
+# #     preserve_types: yes
 #     explore_source: rental {
+#       preserve_types: yes
 #       column: customer_id {}
 #       column: first_rental {}
 #       #derived_column: first_rental_agg {

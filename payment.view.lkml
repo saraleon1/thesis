@@ -49,6 +49,12 @@ view: payment {
     drill_fields: [detail*]
   }
 
+measure: revenueish {
+  type: number
+  sql: ${film.rental_rate} * ${rental.count} ;;
+}
+
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
