@@ -2,7 +2,7 @@ view: test_param_preservetype {
   derived_table: {
 #     preserve_types: yes
     explore_source: rental {
-      preserve_types: yes
+#       preserve_types: yes
       column: customer_id {}
       column: first_rental {}
       column: rental_time{}

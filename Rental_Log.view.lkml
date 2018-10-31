@@ -25,6 +25,11 @@ view: rental_log {
 dimension: film_title {
   type: string
   primary_key: yes
+  link: {
+    label: "Movie Facts"
+    url: "/dashboards/242?Title={{ value }}"
+    icon_url: "https://looker.com/favicon.ico"
+  }
 }
 
 dimension:  film_rating {

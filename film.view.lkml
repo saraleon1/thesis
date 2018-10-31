@@ -79,9 +79,18 @@ view: film {
   dimension: title {
     type: string
     sql: ${TABLE}.title ;;
-    html: <a href="https://google.com"> {{value}} </a>;;
+    html: <a href="https://dcl.dev.looker.com/dashboards/242?Movie%20Title=&filter_config=%7B%22Movie%20Title%22:%5B%7B%22type%22:%22%3D%22,%22values%22:%5B%7B%22constant%22:%22%22%7D,%7B%7D%5D,%22id%22:6%7D%5D%7D"> {{value}} </a>;;
   }
 
+parameter: title_filter {
+  type: string
+  hidden: yes
+}
+
+dimension: title_filter_dimension{
+  type: string
+  sql:  { parameter title_filter } ;;
+}
   measure: count {
     type: count
     drill_fields: [detail*]
@@ -90,6 +99,7 @@ view: film {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
+      title_filter,
       film_id,
       language.name,
       language.language_id,

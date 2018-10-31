@@ -1,7 +1,7 @@
 connection: "lookerdata_standard_sql"
 
 include: "*.view.lkml"         # include all views in this project
-include: "test_dash.dashboard.lookml"  # include all dashboards in this project
+# include: "test_dash.dashboard.lookml"  # include all dashboards in this project
 
 
 explore: actor {
