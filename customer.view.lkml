@@ -56,6 +56,11 @@ view: customer {
   dimension: full_name {
     type: string
     sql: CONCAT(${TABLE}.first_name, ' ', ${TABLE}.last_name) ;;
+    link: {
+      label: "More About This Customer"
+      url: "/dashboards/249?Name={{ value }}"
+      icon_url: "https://looker.com/favicon.ico"
+    }
   }
   dimension_group: last_update {
     type: time
