@@ -23,6 +23,7 @@ view: dt_block {
 
 dimension: user_id {
   type: number
+  label: "customer id"
 }
 
 dimension: lifetime_orders {

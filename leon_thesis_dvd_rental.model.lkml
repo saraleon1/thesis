@@ -274,6 +274,12 @@ explore: rental {
     sql_on: ${film.language_id} = ${language.language_id} ;;
     relationship: many_to_one
   }
+
+  join: dt_block {
+    type: left_outer
+    sql_on: ${rental.customer_id} = ${dt_block.user_id} ;;
+    relationship: one_to_one
+  }
 }
 
 
@@ -338,6 +344,7 @@ explore: monthly_activity {}
 
 explore: dt_block {
   label: "Cohorts"
+
 }
 
 explore: customer_order_facts {}
