@@ -4,7 +4,7 @@ view: store {
   dimension: store_id {
     primary_key: yes
     type: number
-    sql: ${TABLE}.store_id ;;
+    sql: CAST(${TABLE}.store_id as INT64) ;;
   }
 
   dimension: address_id {

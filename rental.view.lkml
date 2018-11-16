@@ -16,7 +16,7 @@ view: rental {
   dimension: inventory_id {
     type: number
     # hidden: yes
-    sql: ${TABLE}.inventory_id ;;
+    sql: CAST( ${TABLE}.inventory_id as INT64);;
   }
 
   dimension_group: last_update {

@@ -10,6 +10,7 @@ view: dt_block {
 
       SELECT rental.customer_id AS user_id
           , COUNT(DISTINCT rental_id) as lifetime_orders
+          , COUNT(DISTINCT customer_id) as lifetime_count
           , COUNT(*) AS lifetime_order_items
           , MIN(rental.rental_date) AS first_order
           , MAX(rental.rental_date) AS latest_order
@@ -23,7 +24,11 @@ view: dt_block {
 
 dimension: user_id {
   type: number
-  label: "customer id"
+  label: "Customer ID"
+}
+
+dimension: lifetime_count {
+  type: number
 }
 
 dimension: lifetime_orders {
@@ -38,6 +43,11 @@ dimension_group: first_order {
   type: time
 }
 
+dimension: months_since_first_purchase{
+  type: number
+  sql: date_diff(CURRENT_DATE(), ${first_order_date}, month);;
+}
+
 dimension_group: latest_order {
   type: time
 }
@@ -47,6 +57,32 @@ dimension: days_as_customer {}
 dimension: days_since_purchase {}
 
 dimension: number_of_distinct_months_with_orders {}
+
+measure: total_active_users {
+  type: count_distinct
+  sql: ${user_id} ;;
+#   drill_fields: [users.id, users.age, users.name, user_order_facts.lifetime_orders]
+
+  filters: {
+    field: lifetime_count
+    value: ">0"
+  }
+}
+
+  measure: total_users {
+    type: count_distinct
+    sql: ${user_id} ;;
+#   drill_fields: [users.id, users.age, users.name, user_order_facts.lifetime_orders]
+
+  }
+
+  measure: percent_of_cohort_active {
+    type: number
+    value_format_name: percent_1
+    sql: 1.0 * ${total_active_users} / nullif(${total_users},0) ;;
+#     drill_fields: [user_id, monthly_purchases, total_amount_spent]
+  }
+
 
 dimension: lifetime_number_of_orders_tier {
     type: tier

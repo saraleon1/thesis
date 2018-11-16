@@ -45,7 +45,7 @@ view: film {
 
   dimension: rating {
     type: string
-    sql: ${TABLE}.rating ;;
+    sql: CAST(${TABLE}.rating as string) ;;
   }
 
   dimension: release_year {
