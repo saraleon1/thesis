@@ -19,6 +19,13 @@ view: rental {
     sql: CAST( ${TABLE}.inventory_id as INT64);;
   }
 
+  dimension: test {
+    sql: case when rand() > 0.5
+    then "<div><b>hello</b></div>"
+    else "<img src='https://ctimgibedfordviewcampuslibrary.files.wordpress.com/2015/10/library-books-return.jpg' height=70 width=70>"
+    end;;
+  }
+
   dimension_group: last_update {
     type: time
     timeframes: [
@@ -78,9 +85,9 @@ view: rental {
     type: string
     sql: if(${rental.actual_rental_duration} - ${film.rental_duration} > 0, "overdue", "on time");;
     html:{% if value == "overdue" %}
-                   <p style="color: white; background-color: purple; font-size:150%; text-align:center"><img src="https://ctimgibedfordviewcampuslibrary.files.wordpress.com/2015/10/library-books-return.jpg" height=70 width=70>{{ rendered_value }}</p>
+                   <p style="color: white; background-color: #252cc7; font-size:150%; text-align:center"><img src="https://ctimgibedfordviewcampuslibrary.files.wordpress.com/2015/10/library-books-return.jpg" height=70 width=70><b>{{ rendered_value }}</b></p>
           {% else %}
-            <p <p style="color: black; background-color: lightgreen; font-size:100%; text-align:center"><img src="https://cdn1.vectorstock.com/i/1000x1000/33/60/hands-palm-applause-success-text-bravo-vector-6003360.jpg" height=70 width=70 style="color: black; background-color: orange; font-size:100%; text-align:center">{{ rendered_value }}</p>
+            <p <p style="color: black; background-color: #ffad27; font-size:150%; text-align:center"><img src="https://cdn1.vectorstock.com/i/1000x1000/33/60/hands-palm-applause-success-text-bravo-vector-6003360.jpg" height=70 width=70><b>{{ rendered_value }}</b></p>
           {% endif %}
           ;;
   }
@@ -89,6 +96,11 @@ view: rental {
     type: number
     # hidden: yes
     sql: ${TABLE}.staff_id ;;
+  }
+
+  dimension: image {
+    sql: 1 ;;
+    html: <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Thats_all_folks.svg/1589px-Thats_all_folks.svg.png"/> ;;
   }
 
   measure: count {

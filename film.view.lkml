@@ -5,6 +5,7 @@ view: film {
     primary_key: yes
     type: number
     sql: ${TABLE}.film_id ;;
+    drill_fields: [title]
   }
 
   dimension: description {

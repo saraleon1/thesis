@@ -79,7 +79,7 @@ view: customer {
   dimension: store_id {
     type: number
     # hidden: yes
-    sql: ${TABLE}.store_id ;;
+    sql: CAST(${TABLE}.store_id as INT64) ;;
   }
 
   measure: count {

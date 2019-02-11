@@ -349,3 +349,4 @@ explore: dt_block {
 
 explore: customer_order_facts {}
 explore: test_param_preservetype {}
+explore: sql_runner_query_revenue {}

@@ -56,4 +56,9 @@ view: first_rental {
      type: date
      sql: CAST(${TABLE}.first_rental AS TIMESTAMP) ;;
   }
+
+  measure: count {
+    type: count
+#     sql: ${TABLE}.first_rental ;;
+  }
 }

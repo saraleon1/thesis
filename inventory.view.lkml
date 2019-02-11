@@ -4,13 +4,14 @@ view: inventory {
   dimension: inventory_id {
     primary_key: yes
     type: number
-    sql: ${TABLE}.inventory_id ;;
+    sql: CAST(${TABLE}.inventory_id as INT64) ;;
   }
 
   dimension: film_id {
     type: number
     # hidden: yes
-    sql: ${TABLE}.film_id ;;
+    sql: CAST(${TABLE}.film_id as INT64) ;;
+    drill_fields: [film.title]
   }
 
   dimension_group: last_update {
@@ -30,7 +31,7 @@ view: inventory {
   dimension: store_id {
     type: number
     # hidden: yes
-    sql: ${TABLE}.store_id ;;
+    sql: CAST(${TABLE}.store_id as INT64) ;;
   }
 
   measure: count {
