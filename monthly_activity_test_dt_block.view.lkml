@@ -1,6 +1,6 @@
 view: monthly_activity_test_dt_block {
   derived_table: {
-    sql_trigger_value: select current_date ;;
+#     sql_trigger_value: select current_date ;;
     sortkeys: ["signup_month"]
     distribution: "user_id"
     sql: SELECT
