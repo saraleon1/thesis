@@ -1,31 +1,21 @@
 view: sme_pdt {
-  derived_table: {
-    sql:
-
-    SELECT
-  customer.active  AS "customer.active",
-  customer.address_id  AS "customer.address_id",
-  customer.store_id  AS "customer.store_id",
-  COUNT(*) AS "customer.count"
-FROM public.customer  AS customer
-
-GROUP BY 1,2,3  ;;
-
-      sql_trigger_value: SELECT DATE_PART('hour', NOW());;
+   derived_table: {
+    explore_source: inventory {
+      column: film_id {}
+      column: inventory_id {}
+      column: count {}
     }
-    dimension: active {
-      type: number
-      sql: ${TABLE}.active ;;
-    }
-
-    dimension: address_id {
-      type: number
-      # hidden: yes
-      sql: ${TABLE}.address_id ;;
-    }
-
-    measure: count {
-      type: count
-    }
-
+    sql_trigger_value: SELECT EXTRACT(HOUR FROM CURRENT_TIMESTAMP()) ;;
   }
+  dimension: film_id {
+    type: number
+  }
+  dimension: inventory_id {
+    type: number
+  }
+  dimension: count {
+    type: number
+  }
+  }
+# If necessary, uncomment the line below to include explore_source.
+# include: "leon_thesis_dvd_rental.model.lkml"
