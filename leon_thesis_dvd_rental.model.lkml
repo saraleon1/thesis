@@ -346,7 +346,7 @@ explore: dt_block {
   label: "Cohorts"
 
 }
-
+explore: sme_pdt {}
 explore: customer_order_facts {}
 explore: test_param_preservetype {}
 explore: sql_runner_query_revenue {}
