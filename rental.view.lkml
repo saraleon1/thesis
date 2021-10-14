@@ -96,7 +96,7 @@ view: rental {
     type: number
     # hidden: yes
     sql: 1234.57 ;;
-    #value_format_name: usd_0
+    value_format_name: usd_0
   }
 
   dimension: image {
