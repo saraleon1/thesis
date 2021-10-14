@@ -96,7 +96,6 @@ view: rental {
     type: number
     # hidden: yes
     sql: 5/2 ;;
-    value_format_name: usd_0
   }
 
   dimension: image {
