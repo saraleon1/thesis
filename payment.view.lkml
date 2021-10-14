@@ -52,6 +52,13 @@ view: payment {
 measure: revenueish {
   type: number
   sql: ${film.rental_rate} * ${rental.count} ;;
+  #value_format_name:
+  }
+
+measure: revenueish_test_with_value_format {
+  type: number
+  sql: ${film.rental_rate} * ${rental.count} ;;
+  value_format_name: usd_0
 }
 
 
