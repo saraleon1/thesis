@@ -92,11 +92,17 @@ view: rental {
           ;;
   }
 
+  dimension: staff_id_tester {
+    type: number
+    # hidden: yes
+    sql: ${staff_id} / 3 ;;
+  }
+
   dimension: staff_id {
     type: number
     # hidden: yes
-    sql: 2000.42/3 ;;
-    # value_format_name: usd_0
+    sql: 2000.42 ;;
+    value_format_name: usd_0
   }
 
   dimension: image {
