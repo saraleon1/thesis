@@ -51,13 +51,13 @@ view: payment {
 
 measure: revenueish {
   type: number
-  sql: ${rental.count} * 5.6 ;;
+  sql: ${rental.count} * 5.5 ;;
   #value_format_name:
   }
 
 measure: revenueish_test_with_value_format {
   type: number
-  sql:  ${rental.count} * 5.6 ;;
+  sql:  ${rental.count} * 5.5 ;;
   value_format_name: usd_0
 }
 
