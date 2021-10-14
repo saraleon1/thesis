@@ -95,7 +95,8 @@ view: rental {
   dimension: staff_id {
     type: number
     # hidden: yes
-    sql: ${TABLE}.staff_id ;;
+    sql: 5/2 ;;
+    value_format_name: usd_0
   }
 
   dimension: image {
